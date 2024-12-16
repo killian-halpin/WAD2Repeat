@@ -6,10 +6,6 @@ import {getAllGenres} from '../tmdb-api';
 
 const router = express.Router();
 
-router.get('/', asyncHandler(async (req, res) => {
-    const movies = await movieModel.find();
-    res.status(200).json(movies);
-}));
 
 router.get('/', asyncHandler(async (req, res) => {
     let { page = 1, limit = 10 } = req.query; // destructure page and limit and set default values
